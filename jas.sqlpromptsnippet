@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>jas</Title>
+      <Shortcut>jas</Shortcut>
+      <Description>Job Add Step</Description>
+      <Author />
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations />
+      <Code Language="sql"><![CDATA[--1 = Quit with success
+--2 = Quit with failure
+--3 = Go to next step
+--4 = Go to step on_success_step_id
+
+-- Add new job step
+EXEC msdb.dbo.sp_add_jobstep
+	@job_name			= N'[JOB NAME]',
+	@step_name			= N'[NEW STEP NAME]',  
+	@command			= N'[NEW STEP CODE]',   
+	@database_name		= N'[NEW STEP DATABASE]'
+
+-- Update actions on previous last step
+EXEC msdb.dbo.sp_update_jobstep
+	@job_name			= N'[JOB NAME]',
+	@step_id			= [LAST STEP ID],
+	@on_success_action	= 3,
+	@on_fail_action		= 3]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

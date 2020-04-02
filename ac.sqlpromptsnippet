@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>ac</Title>
+      <Shortcut>ac</Shortcut>
+      <Description>Add column</Description>
+      <Author />
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>table_name</ID>
+          <ToolTip />
+          <Default />
+        </Literal>
+        <Literal>
+          <ID>column_name</ID>
+          <ToolTip />
+          <Default />
+        </Literal>
+      </Declarations>
+      <Code Language="sql"><![CDATA[IF NOT EXISTS (SELECT * FROM sys.columns WHERE OBJECT_NAME(c.[object_id]) = '$table_name$' AND c.[name] = '$column_name$')
+BEGIN;
+	ALTER TABLE dbo.$table_name$
+	ADD $column_name$ $SELECTIONEND$int$SELECTIONSTART$ NULL;
+END;]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

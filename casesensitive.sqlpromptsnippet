@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>casesensitive</Title>
+      <Shortcut>casesensitive</Shortcut>
+      <Description>Format text with case sensitive collation</Description>
+      <Author />
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations />
+      <Code Language="sql"><![CDATA[COLLATE SQL_Latin1_General_CP1_CS_AS]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>ct</Title>
+      <Shortcut>ct</Shortcut>
+      <Description>Create table</Description>
+      <Author />
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>table_name</ID>
+          <ToolTip />
+          <Default>[table_name]</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="sql"><![CDATA[IF OBJECT_ID('dbo.$table_name$') IS NULL
+BEGIN;
+	CREATE TABLE dbo.$table_name$ (
+		$table_name$ID int IDENTITY(1,1) NOT NULL CONSTRAINT PK_$table_name$ PRIMARY KEY CLUSTERED ($table_name$ID ASC),
+	--	ID int IDENTITY(1,1) NOT NULL CONSTRAINT PK_$table_name$ PRIMARY KEY CLUSTERED (ID ASC),
+	--	InsertDate datetime NOT NULL CONSTRAINT DF_$table_name$_InsertDate DEFAULT GETUTCDATE(),
+		$CURSOR$
+	--	CONSTRAINT FK_$table_name$_[ForeignKeyColumn] FOREIGN KEY([ForeignKeyColumn]) REFERENCES [ReferencedTable] ([ReferencedColumn]),
+	);
+END;]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>bt</Title>
+      <Shortcut>bt</Shortcut>
+      <Description>BEGIN TRAN...ROLLBACK block</Description>
+      <Author />
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations />
+      <Code Language="sql"><![CDATA[--SET XACT_ABORT ON;
+BEGIN TRAN;
+	$SELECTEDTEXT$
+ROLLBACK; --COMMIT]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

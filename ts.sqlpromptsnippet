@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>ts</Title>
+      <Shortcut>ts</Shortcut>
+      <Description>target source for merge</Description>
+      <Author />
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations />
+      <Code Language="sql"><![CDATA[o.$SELECTEDTEXT$ = n.$SELECTEDTEXT$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

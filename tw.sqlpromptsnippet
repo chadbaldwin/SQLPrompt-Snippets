@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>tw</Title>
+      <Shortcut>tw</Shortcut>
+      <Description>THROW function snippet</Description>
+      <Author />
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations />
+      <Code Language="sql"><![CDATA[; THROW 51000, '$CURSOR$', 1;]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

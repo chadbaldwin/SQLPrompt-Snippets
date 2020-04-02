@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>stat</Title>
+      <Shortcut>stat</Shortcut>
+      <Description>Turn on SQL stats for IO and Time</Description>
+      <Author />
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations />
+      <Code Language="sql"><![CDATA[$SELECTIONEND$SET STATISTICS IO ON;
+SET STATISTICS TIME ON;
+$SELECTEDTEXT$
+SET STATISTICS IO OFF;
+SET STATISTICS TIME OFF;$SELECTIONEND$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

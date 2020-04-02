@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>rc0</Title>
+      <Shortcut>rc0</Shortcut>
+      <Description>If Rowcount Zero snippet</Description>
+      <Author />
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations />
+      <Code Language="sql"><![CDATA[IF (@@ROWCOUNT = 0)
+BEGIN;
+	RAISERROR('No records to process',0,1) WITH NOWAIT;
+	RETURN;
+END;]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
