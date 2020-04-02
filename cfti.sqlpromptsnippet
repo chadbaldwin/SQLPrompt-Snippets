@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>cfti</Title>
+      <Shortcut>cfti</Shortcut>
+      <Description>Create inline table-valued function</Description>
+      <Author />
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>func_name</ID>
+          <ToolTip />
+          <Default />
+        </Literal>
+      </Declarations>
+      <Code Language="sql"><![CDATA[USE $DBNAME$;
+GO
+IF OBJECT_ID('dbo.uf_$func_name$') IS NOT NULL DROP FUNCTION dbo.uf_$func_name$;
+GO
+-- =============================================
+-- Author:		Chad Baldwin
+-- Create date: $DATE(yyyy-MM-dd)$
+-- Description:	
+-- =============================================
+CREATE FUNCTION dbo.uf_$func_name$ (
+	@[VARIABLE_NAME] [TYPE]
+)
+RETURNS TABLE
+AS
+RETURN (
+	--Query
+)
+GO
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

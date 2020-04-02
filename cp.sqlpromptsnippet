@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>cp</Title>
+      <Shortcut>cp</Shortcut>
+      <Description>Create stored procedure</Description>
+      <Author />
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>proc_name</ID>
+          <ToolTip />
+          <Default />
+        </Literal>
+      </Declarations>
+      <Code Language="sql"><![CDATA[USE $DBNAME$;
+GO
+IF OBJECT_ID('dbo.$proc_name$') IS NOT NULL DROP PROCEDURE dbo.$proc_name$;
+GO
+-- =============================================
+-- Author:		Chad Baldwin
+-- Create date: $DATE(yyyy-MM-dd)$
+-- Description:
+-- =============================================
+CREATE PROCEDURE dbo.$proc_name$ (
+	@[VARIABLE_NAME] [TYPE]
+)
+AS
+BEGIN
+	--SET NOCOUNT ON;
+	--SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
+	
+	PRINT CONCAT(DB_NAME(),'.',OBJECT_SCHEMA_NAME(@@PROCID),'.',OBJECT_NAME(@@PROCID),': Starting');
+	
+	/* SAMPLE DATA
+		DECLARE @[VARIABLE_NAME] [TYPE] = ...
+	--*/
+
+	--Magic Numbers
+	--DECLARE @[VARIABLE_NAME] [TYPE] = ...
+	------------------------------------------------------------------------------
+	
+	------------------------------------------------------------------------------
+	--Put code here
+	$SELECTEDTEXT$$CURSOR$
+	------------------------------------------------------------------------------
+
+	------------------------------------------------------------------------------
+	PRINT CONCAT(DB_NAME(),'.',OBJECT_SCHEMA_NAME(@@PROCID),'.',OBJECT_NAME(@@PROCID),': Done');
+END
+GO]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

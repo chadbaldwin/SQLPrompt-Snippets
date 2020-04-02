@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>cfs</Title>
+      <Shortcut>cfs</Shortcut>
+      <Description>Create scalar function</Description>
+      <Author />
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>func_name</ID>
+          <ToolTip />
+          <Default />
+        </Literal>
+        <Literal>
+          <ID>output_datatype</ID>
+          <ToolTip />
+          <Default />
+        </Literal>
+        <Literal>
+          <ID>output_param</ID>
+          <ToolTip />
+          <Default />
+        </Literal>
+      </Declarations>
+      <Code Language="sql"><![CDATA[USE $DBNAME$;
+GO
+IF OBJECT_ID('dbo.uf_$func_name$') IS NOT NULL DROP FUNCTION dbo.uf_$func_name$;
+GO
+-- =============================================
+-- Author:		Chad Baldwin
+-- Create date: $DATE(yyyy-MM-dd)$
+-- Description:	
+-- =============================================
+CREATE FUNCTION dbo.uf_$func_name$ (
+	@[VARIABLE_NAME] [TYPE]
+)
+RETURNS $output_datatype$
+AS
+BEGIN
+	DECLARE @$output_param$ $output_datatype$;
+
+	--Set value of @$output_param$
+
+	RETURN @$output_param$;
+END
+GO
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
