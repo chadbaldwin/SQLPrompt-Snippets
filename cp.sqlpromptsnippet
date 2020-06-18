@@ -34,8 +34,8 @@ AS
 BEGIN
 	--SET NOCOUNT ON;
 	--SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
-	
-	PRINT CONCAT(DB_NAME(),'.',OBJECT_SCHEMA_NAME(@@PROCID),'.',OBJECT_NAME(@@PROCID),': Starting');
+	DECLARE @ProcName VARCHAR(255) = CONCAT(DB_NAME(),'.',OBJECT_SCHEMA_NAME(@@PROCID),'.',OBJECT_NAME(@@PROCID));
+	RAISERROR('%s: Starting',0,1, @ProcName) WITH NOWAIT;
 	
 	/* SAMPLE DATA
 		DECLARE @[VARIABLE_NAME] [TYPE] = ...
@@ -51,7 +51,7 @@ BEGIN
 	------------------------------------------------------------------------------
 
 	------------------------------------------------------------------------------
-	PRINT CONCAT(DB_NAME(),'.',OBJECT_SCHEMA_NAME(@@PROCID),'.',OBJECT_NAME(@@PROCID),': Done');
+	RAISERROR('%s: Done',0,1, @ProcName) WITH NOWAIT;
 END
 GO]]></Code>
     </Snippet>

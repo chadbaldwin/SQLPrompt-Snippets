@@ -13,6 +13,16 @@
     <Snippet>
       <Declarations>
         <Literal>
+          <ID>Filename</ID>
+          <ToolTip />
+          <Default />
+        </Literal>
+        <Literal>
+          <ID>Ticket_Number</ID>
+          <ToolTip />
+          <Default />
+        </Literal>
+        <Literal>
           <ID>Description</ID>
           <ToolTip />
           <Default />
@@ -27,29 +37,26 @@
           <ToolTip />
           <Default />
         </Literal>
-        <Literal>
-          <ID>Filename</ID>
-          <ToolTip />
-          <Default />
-        </Literal>
-        <Literal>
-          <ID>Ticket_Number</ID>
-          <ToolTip />
-          <Default />
-        </Literal>
       </Declarations>
       <Code Language="sql"><![CDATA[GO
 ------------------------------------------------------------------------------
 RAISERROR('Starting: $Filename$',0,1) WITH NOWAIT;
-RAISERROR('$Ticket_Number$ - $Description$',0,1) WITH NOWAIT;
+RAISERROR('    $Ticket_Number$ - $Description$',0,1) WITH NOWAIT;
 ------------------------------------------------------------------------------
 USE $Database$;
 ------------------------------------------------------------------------------
 GO
 ------------------------------------------------------------------------------
-RAISERROR('$Description_Comment$',0,1) WITH NOWAIT;
+RAISERROR('    $Description_Comment$',0,1) WITH NOWAIT;
 ------------------------------------------------------------------------------
-	--TODO Code - Make sure code checks for existence before performing action and has else statements alerting/warning it already has been run/skipped.
+	IF ()
+	BEGIN;
+		--TODO Code - Make sure code checks for existence before performing action and has else statements alerting/warning it already has been run/skipped.
+	END;
+	ELSE
+	BEGIN;
+		RAISERROR('    Script has already been run',0,1) WITH NOWAIT;
+	END;
 ------------------------------------------------------------------------------
 RAISERROR('Finished: $Filename$',0,1) WITH NOWAIT;
 ------------------------------------------------------------------------------
