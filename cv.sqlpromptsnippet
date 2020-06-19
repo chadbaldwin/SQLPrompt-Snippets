@@ -23,8 +23,6 @@ GO
 IF OBJECT_ID('dbo.vw_$view_name$') IS NOT NULL DROP VIEW dbo.vw_$view_name$;
 GO
 -- =============================================
--- Author:		Chad Baldwin
--- Create date: $DATE(yyyy-MM-dd)$
 -- Description:
 -- =============================================
 CREATE VIEW dbo.vw_$view_name$

@@ -33,8 +33,6 @@ GO
 IF OBJECT_ID('dbo.uf_$func_name$') IS NOT NULL DROP FUNCTION dbo.uf_$func_name$;
 GO
 -- =============================================
--- Author:		Chad Baldwin
--- Create date: $DATE(yyyy-MM-dd)$
 -- Description:	
 -- =============================================
 CREATE FUNCTION dbo.uf_$func_name$ (

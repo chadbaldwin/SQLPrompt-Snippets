@@ -23,8 +23,6 @@ GO
 IF OBJECT_ID('dbo.$proc_name$') IS NOT NULL DROP PROCEDURE dbo.$proc_name$;
 GO
 -- =============================================
--- Author:		Chad Baldwin
--- Create date: $DATE(yyyy-MM-dd)$
 -- Description:
 -- =============================================
 CREATE PROCEDURE dbo.$proc_name$ (
