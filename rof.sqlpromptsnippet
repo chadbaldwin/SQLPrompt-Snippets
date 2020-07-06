@@ -13,11 +13,6 @@
     <Snippet>
       <Declarations>
         <Literal>
-          <ID>Filename</ID>
-          <ToolTip />
-          <Default />
-        </Literal>
-        <Literal>
           <ID>Ticket_Number</ID>
           <ToolTip />
           <Default />
@@ -40,8 +35,7 @@
       </Declarations>
       <Code Language="sql"><![CDATA[GO
 ------------------------------------------------------------------------------
-RAISERROR('Starting: $Filename$',0,1) WITH NOWAIT;
-RAISERROR('    $Ticket_Number$ - $Description$',0,1) WITH NOWAIT;
+RAISERROR('Starting: $Ticket_Number$ - $Description$',0,1) WITH NOWAIT;
 ------------------------------------------------------------------------------
 USE $Database$;
 ------------------------------------------------------------------------------
@@ -58,7 +52,7 @@ RAISERROR('    $Description_Comment$',0,1) WITH NOWAIT;
 		RAISERROR('    Script has already been run',0,1) WITH NOWAIT;
 	END;
 ------------------------------------------------------------------------------
-RAISERROR('Finished: $Filename$',0,1) WITH NOWAIT;
+RAISERROR('Finished: $Ticket_Number$ - $Description$',0,1) WITH NOWAIT;
 ------------------------------------------------------------------------------
 GO]]></Code>
     </Snippet>

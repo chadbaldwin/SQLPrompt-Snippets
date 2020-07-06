@@ -23,7 +23,7 @@ BEGIN;
 	CREATE TABLE dbo.$table_name$ (
 		$table_name$ID int IDENTITY(1,1) NOT NULL CONSTRAINT PK_$table_name$ PRIMARY KEY CLUSTERED ($table_name$ID ASC),
 	--	ID int IDENTITY(1,1) NOT NULL CONSTRAINT PK_$table_name$ PRIMARY KEY CLUSTERED (ID ASC),
-	--	InsertDate datetime NOT NULL CONSTRAINT DF_$table_name$_InsertDate DEFAULT GETUTCDATE(),
+	--	InsertDateUTC datetime NOT NULL CONSTRAINT DF_$table_name$_InsertDateUTC DEFAULT GETUTCDATE(),
 		$CURSOR$
 	--	CONSTRAINT FK_$table_name$_[ForeignKeyColumn] FOREIGN KEY([ForeignKeyColumn]) REFERENCES [ReferencedTable] ([ReferencedColumn]),
 	);
