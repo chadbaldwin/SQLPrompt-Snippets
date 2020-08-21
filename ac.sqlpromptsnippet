@@ -26,7 +26,10 @@
       <Code Language="sql"><![CDATA[IF NOT EXISTS (SELECT * FROM sys.columns WHERE OBJECT_NAME([object_id]) = '$table_name$' AND [name] = '$column_name$')
 BEGIN;
 	ALTER TABLE dbo.$table_name$
-	ADD $column_name$ $SELECTIONEND$int$SELECTIONSTART$ NULL;
+		ADD $column_name$ $SELECTIONEND$int$SELECTIONSTART$ NULL;
+		--	CONSTRAINT DF_$table_name$_$column_name$ DEFAULT (1)
+		--	CONSTRAINT UQ_$table_name$_$column_name$ UNIQUE
+		--	CONSTRAINT FK_$table_name$_$column_name$ FOREIGN KEY ($column_name$) REFERENCES [ReferencedTable] ([ReferencedColumn])
 END;]]></Code>
     </Snippet>
   </CodeSnippet>
