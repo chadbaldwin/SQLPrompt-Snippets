@@ -12,7 +12,7 @@
     </Header>
     <Snippet>
       <Declarations />
-      <Code Language="sql"><![CDATA[IF OBJECT_ID('dbo.$PASTE$') IS NOT NULL DROP VIEW dbo.$PASTE$;]]></Code>
+      <Code Language="sql"><![CDATA[IF OBJECT_ID('dbo.$PASTE$','V') IS NOT NULL DROP VIEW dbo.$PASTE$;]]></Code>
     </Snippet>
   </CodeSnippet>
 </CodeSnippets>

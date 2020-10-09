@@ -23,7 +23,7 @@
           <Default />
         </Literal>
       </Declarations>
-      <Code Language="sql"><![CDATA[IF NOT EXISTS (SELECT * FROM sys.columns WHERE OBJECT_NAME([object_id]) = '$table_name$' AND [name] = '$column_name$')
+      <Code Language="sql"><![CDATA[IF (COL_LENGTH('dbo.$table_name$', '$column_name$') IS NOT NULL)
 BEGIN;
 	ALTER TABLE dbo.$table_name$
 		ADD $column_name$ $SELECTIONEND$int$SELECTIONSTART$ NULL;

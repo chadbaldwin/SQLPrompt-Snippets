@@ -20,7 +20,7 @@
       </Declarations>
       <Code Language="sql"><![CDATA[USE $DBNAME$;
 GO
-IF OBJECT_ID('dbo.$proc_name$') IS NOT NULL DROP PROCEDURE dbo.$proc_name$;
+IF OBJECT_ID('dbo.$proc_name$','P') IS NOT NULL DROP PROCEDURE dbo.$proc_name$;
 GO
 -- =============================================
 -- Description:

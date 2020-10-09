@@ -12,7 +12,7 @@
     </Header>
     <Snippet>
       <Declarations />
-      <Code Language="sql"><![CDATA[IF OBJECT_ID('tempdb..$PASTE$') IS NOT NULL DROP TABLE $PASTE$; --SELECT * FROM $PASTE$]]></Code>
+      <Code Language="sql"><![CDATA[IF OBJECT_ID('tempdb..$PASTE$','U') IS NOT NULL DROP TABLE $PASTE$; --SELECT * FROM $PASTE$]]></Code>
     </Snippet>
   </CodeSnippet>
 </CodeSnippets>

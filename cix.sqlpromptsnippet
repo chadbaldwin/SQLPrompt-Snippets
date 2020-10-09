@@ -23,12 +23,12 @@
           <Default />
         </Literal>
       </Declarations>
-      <Code Language="sql"><![CDATA[IF (INDEXPROPERTY(OBJECT_ID('$table_name$'), 'IX_$table_name$_$column$', 'IndexId') IS NULL)
+      <Code Language="sql"><![CDATA[IF (INDEXPROPERTY(OBJECT_ID('dbo.$table_name$'), 'IX_$table_name$_$column$', 'IndexId') IS NULL)
 BEGIN;
-	CREATE UNIQUE    CLUSTERED INDEX IX_$table_name$_$column$ ON $table_name$ ($column$);
-	CREATE UNIQUE NONCLUSTERED INDEX IX_$table_name$_$column$ ON $table_name$ ($column$) INCLUDE ();
-	CREATE           CLUSTERED INDEX IX_$table_name$_$column$ ON $table_name$ ($column$);
-	CREATE        NONCLUSTERED INDEX IX_$table_name$_$column$ ON $table_name$ ($column$) INCLUDE ();
+	CREATE UNIQUE    CLUSTERED INDEX IX_$table_name$_$column$ ON dbo.$table_name$ ($column$);
+	CREATE UNIQUE NONCLUSTERED INDEX IX_$table_name$_$column$ ON dbo.$table_name$ ($column$) INCLUDE ();
+	CREATE           CLUSTERED INDEX IX_$table_name$_$column$ ON dbo.$table_name$ ($column$);
+	CREATE        NONCLUSTERED INDEX IX_$table_name$_$column$ ON dbo.$table_name$ ($column$) INCLUDE ();
 END;]]></Code>
     </Snippet>
   </CodeSnippet>

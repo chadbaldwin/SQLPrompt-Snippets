@@ -20,7 +20,7 @@
       </Declarations>
       <Code Language="sql"><![CDATA[USE $DBNAME$;
 GO
-IF OBJECT_ID('dbo.vw_$view_name$') IS NOT NULL DROP VIEW dbo.vw_$view_name$;
+IF OBJECT_ID('dbo.vw_$view_name$','V') IS NOT NULL DROP VIEW dbo.vw_$view_name$;
 GO
 -- =============================================
 -- Description:
