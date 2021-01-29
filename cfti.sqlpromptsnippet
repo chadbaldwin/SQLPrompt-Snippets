@@ -32,7 +32,7 @@ RETURNS TABLE
 AS
 RETURN (
 	--Query
-)
+);
 GO
 ]]></Code>
     </Snippet>

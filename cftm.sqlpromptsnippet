@@ -32,11 +32,11 @@ RETURNS @Return TABLE (
 	[TABLE_SCHEMA]
 )
 AS
-BEGIN
-	--INSERT INTO @Return ()
+BEGIN;
+	--INSERT INTO @Return ();
 	
 	RETURN;
-END
+END;
 GO
 ]]></Code>
     </Snippet>

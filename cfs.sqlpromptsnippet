@@ -40,13 +40,13 @@ CREATE FUNCTION dbo.uf_$func_name$ (
 )
 RETURNS $output_datatype$
 AS
-BEGIN
+BEGIN;
 	DECLARE @$output_param$ $output_datatype$;
 
 	--Set value of @$output_param$
 
 	RETURN @$output_param$;
-END
+END;
 GO
 ]]></Code>
     </Snippet>

@@ -12,11 +12,7 @@
     </Header>
     <Snippet>
       <Declarations />
-      <Code Language="sql"><![CDATA[$SELECTIONEND$SET STATISTICS IO ON;
-SET STATISTICS TIME ON;
-$SELECTEDTEXT$
-SET STATISTICS IO OFF;
-SET STATISTICS TIME OFF;$SELECTIONEND$]]></Code>
+      <Code Language="sql"><![CDATA[SET STATISTICS IO, TIME ON;]]></Code>
     </Snippet>
   </CodeSnippet>
 </CodeSnippets>
