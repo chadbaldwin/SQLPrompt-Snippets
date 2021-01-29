@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>qGenerateTempTable</Title>
+      <Shortcut>qGenerateTempTable</Shortcut>
+      <Description>Generate a temp table using the query from the clipboard</Description>
+      <Author />
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations />
+      <Code Language="sql"><![CDATA[DECLARE @sql nvarchar(MAX) = N'
+$PASTE$
+';
+
+SELECT CONCAT(IIF(column_ordinal = 1, 'CREATE TABLE #tmpTable (' + CHAR(13)+CHAR(10), NULL)
+		, CHAR(9)
+		, x.[name], REPLICATE(CHAR(9), CEILING((x.MaxColNameLen - LEN(x.[name])) / 4.0))
+		, x.system_type_name, REPLICATE(CHAR(9), CEILING((x.MaxTypeNameLen - LEN(x.system_type_name)) / 4.0))
+		, IIF(is_nullable = 1, CHAR(9) + 'NULL','NOT NULL'),','
+		, IIF(x.column_ordinal = MAX(x.column_ordinal) OVER (), CHAR(13)+CHAR(10) + ')', NULL)
+	)
+FROM (
+	SELECT [name] = y.ColName, x.system_type_name, x.is_nullable, x.column_ordinal
+		, MaxColNameLen = MAX(LEN(y.ColName)) OVER () + (4-(MAX(LEN(y.ColName)) OVER () % 4))
+		, MaxTypeNameLen = MAX(LEN(x.system_type_name)) OVER () + (4-(MAX(LEN(x.system_type_name)) OVER () % 4))
+	FROM sys.dm_exec_describe_first_result_set(@sql, NULL, 1) x
+		CROSS APPLY (
+			SELECT ColName = IIF(x.[name] IN (
+									'action','address','application','data','date','day','dayofyear','definition','deny','description','enabled','endpoint',
+									'expiredate','filename','hash','index','level','location','message','minutes','month','monthname','name','or','order',
+									'password','path','population','port','priority','provider','quarter','rank','read','replace','role','row','rowcount',
+									'sequence','server','source','state','status','subject','text','trim','type','uid','url','user','value','version','weekday',
+									'year','object_id','schema_id','type_desc','lock_escalation','durability'
+								) OR x.[name] LIKE '%[^a-z0-9_#]%', '['+x.[name]+']', x.[name])
+		) y
+	WHERE x.is_hidden = 0
+) x
+ORDER BY x.column_ordinal]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
