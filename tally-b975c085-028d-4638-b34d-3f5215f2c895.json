@@ -1,0 +1,8 @@
+{
+  "id": "b975c085-028d-4638-b34d-3f5215f2c895",
+  "name": "tally",
+  "prefix": "tally",
+  "description": "Generate an inline tally table",
+  "body": "WITH c1 AS (SELECT x.x FROM (VALUES(1),(1),(1),(1),(1),(1),(1),(1),(1),(1)) x(x))\t\t-- 10\n\t, c2(x) AS (SELECT 1 FROM c1 x CROSS JOIN c1 y)\t\t\t\t\t\t\t\t\t\t-- 10 * 10\n\t, c3(x) AS (SELECT 1 FROM c2 x CROSS JOIN c2 y CROSS JOIN c2 z)\t\t\t\t\t\t-- 100 * 100 * 100\n\t, c4(rn) AS (SELECT 0 UNION ALL SELECT ROW_NUMBER() OVER (ORDER BY 1/0) FROM c3)\t-- Add zero record, and row numbers\nSELECT x.rn\nFROM c4 x",
+  "placeholders": []
+}

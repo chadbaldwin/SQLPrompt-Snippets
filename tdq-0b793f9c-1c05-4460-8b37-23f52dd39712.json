@@ -1,0 +1,8 @@
+{
+  "id": "0b793f9c-1c05-4460-8b37-23f52dd39712",
+  "name": "tdq",
+  "prefix": "tdq",
+  "description": "Todays date in quotes",
+  "body": "'$DATE(yyyy-MM-dd)$'",
+  "placeholders": []
+}

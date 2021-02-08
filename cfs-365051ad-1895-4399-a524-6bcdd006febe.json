@@ -1,0 +1,21 @@
+{
+  "id": "365051ad-1895-4399-a524-6bcdd006febe",
+  "name": "cfs",
+  "prefix": "cfs",
+  "description": "Create scalar function",
+  "body": "USE $DBNAME$;\nGO\nIF OBJECT_ID('dbo.uf_$func_name$','FN') IS NOT NULL DROP FUNCTION dbo.uf_$func_name$;\nGO\n-- =============================================\n-- Description:\t\n-- =============================================\nCREATE FUNCTION dbo.uf_$func_name$ (\n\t@[VARIABLE_NAME] [TYPE]\n)\nRETURNS $output_datatype$\nAS\nBEGIN;\n\tDECLARE @$output_param$ $output_datatype$;\n\n\t--Set value of @$output_param$\n\n\tRETURN @$output_param$;\nEND;\nGO\n",
+  "placeholders": [
+    {
+      "name": "func_name",
+      "defaultValue": ""
+    },
+    {
+      "name": "output_datatype",
+      "defaultValue": ""
+    },
+    {
+      "name": "output_param",
+      "defaultValue": ""
+    }
+  ]
+}

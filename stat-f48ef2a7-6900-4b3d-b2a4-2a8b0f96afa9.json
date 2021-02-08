@@ -1,0 +1,8 @@
+{
+  "id": "f48ef2a7-6900-4b3d-b2a4-2a8b0f96afa9",
+  "name": "stat",
+  "prefix": "stat",
+  "description": "Turn on SQL stats for IO and Time",
+  "body": "SET STATISTICS IO, TIME ON;",
+  "placeholders": []
+}

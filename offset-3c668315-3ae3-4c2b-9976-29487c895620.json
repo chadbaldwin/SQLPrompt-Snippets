@@ -1,0 +1,8 @@
+{
+  "id": "3c668315-3ae3-4c2b-9976-29487c895620",
+  "name": "offset",
+  "prefix": "offset",
+  "description": "",
+  "body": "OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY",
+  "placeholders": []
+}

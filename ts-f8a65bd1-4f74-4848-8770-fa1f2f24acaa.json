@@ -1,0 +1,8 @@
+{
+  "id": "f8a65bd1-4f74-4848-8770-fa1f2f24acaa",
+  "name": "ts",
+  "prefix": "ts",
+  "description": "target source for merge",
+  "body": "o.$SELECTEDTEXT$ = n.$SELECTEDTEXT$",
+  "placeholders": []
+}

@@ -1,0 +1,8 @@
+{
+  "id": "36ee83ff-2805-4199-9ce0-148d06966371",
+  "name": "dipe",
+  "prefix": "dipe",
+  "description": "Drop If Proc Exists",
+  "body": "IF OBJECT_ID('dbo.$PASTE$','P') IS NOT NULL DROP PROCEDURE dbo.$PASTE$;",
+  "placeholders": []
+}

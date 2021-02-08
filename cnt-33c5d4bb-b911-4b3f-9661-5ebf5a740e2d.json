@@ -1,0 +1,8 @@
+{
+  "id": "33c5d4bb-b911-4b3f-9661-5ebf5a740e2d",
+  "name": "cnt",
+  "prefix": "cnt",
+  "description": "Count with Formatting",
+  "body": "FORMAT(COUNT(*),'N0')",
+  "placeholders": []
+}

@@ -1,0 +1,21 @@
+{
+  "id": "eaa51122-f3bf-4349-bb8f-959c1f39d1a5",
+  "name": "renc",
+  "prefix": "renc",
+  "description": "Rename Column",
+  "body": "EXEC sp_rename 'dbo.$Table_Name$.$Column_Name$', '$NewColumn_Name$', 'COLUMN';",
+  "placeholders": [
+    {
+      "name": "Table_Name",
+      "defaultValue": ""
+    },
+    {
+      "name": "Column_Name",
+      "defaultValue": ""
+    },
+    {
+      "name": "NewColumn_Name",
+      "defaultValue": ""
+    }
+  ]
+}

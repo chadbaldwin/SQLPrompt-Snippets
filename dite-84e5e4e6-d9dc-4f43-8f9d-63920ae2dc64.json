@@ -1,0 +1,8 @@
+{
+  "id": "84e5e4e6-d9dc-4f43-8f9d-63920ae2dc64",
+  "name": "dite",
+  "prefix": "dite",
+  "description": "Drop If Table Exist",
+  "body": "IF OBJECT_ID('tempdb..$PASTE$','U') IS NOT NULL DROP TABLE $PASTE$; --SELECT * FROM $PASTE$",
+  "placeholders": []
+}

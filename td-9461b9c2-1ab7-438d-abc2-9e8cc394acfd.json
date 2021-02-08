@@ -1,0 +1,8 @@
+{
+  "id": "9461b9c2-1ab7-438d-abc2-9e8cc394acfd",
+  "name": "td",
+  "prefix": "td",
+  "description": "Todays date",
+  "body": "$DATE(yyyy-MM-dd)$",
+  "placeholders": []
+}

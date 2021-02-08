@@ -1,0 +1,13 @@
+{
+  "id": "7b2f1ae6-287b-4017-839a-438b4dea3ad8",
+  "name": "cp",
+  "prefix": "cp",
+  "description": "Create stored procedure",
+  "body": "USE $DBNAME$;\nGO\nIF OBJECT_ID('dbo.$proc_name$','P') IS NOT NULL DROP PROCEDURE dbo.$proc_name$;\nGO\n-- =============================================\n-- Description:\n-- =============================================\nCREATE PROCEDURE dbo.$proc_name$ (\n\t@[VARIABLE_NAME] [TYPE]\n)\nAS\nBEGIN\n\t--SET NOCOUNT ON;\n\t--SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;\n\tDECLARE @ProcName VARCHAR(255) = CONCAT(DB_NAME(),'.',OBJECT_SCHEMA_NAME(@@PROCID),'.',OBJECT_NAME(@@PROCID));\n\tRAISERROR('%s: Starting',0,1, @ProcName) WITH NOWAIT;\n\t\n\t/* SAMPLE DATA\n\t\tDECLARE @[VARIABLE_NAME] [TYPE] = ...\n\t--*/\n\n\t--Magic Numbers\n\t--DECLARE @[VARIABLE_NAME] [TYPE] = ...\n\t------------------------------------------------------------------------------\n\t\n\t------------------------------------------------------------------------------\n\t--Put code here\n\t$SELECTEDTEXT$$CURSOR$\n\t------------------------------------------------------------------------------\n\n\t------------------------------------------------------------------------------\n\tRAISERROR('%s: Done',0,1, @ProcName) WITH NOWAIT;\nEND\nGO",
+  "placeholders": [
+    {
+      "name": "proc_name",
+      "defaultValue": ""
+    }
+  ]
+}

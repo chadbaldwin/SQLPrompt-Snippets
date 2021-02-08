@@ -1,0 +1,8 @@
+{
+  "id": "6b9aa00d-6089-4488-af97-413ec493fc2c",
+  "name": "dive",
+  "prefix": "dive",
+  "description": "Drop If View Exists",
+  "body": "IF OBJECT_ID('dbo.$PASTE$','V') IS NOT NULL DROP VIEW dbo.$PASTE$;",
+  "placeholders": []
+}

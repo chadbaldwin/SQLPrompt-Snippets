@@ -1,0 +1,8 @@
+{
+  "id": "e58e32ac-2acf-487f-a18c-504df60c58a3",
+  "name": "seri",
+  "prefix": "seri",
+  "description": "Server Info",
+  "body": "SELECT net_transport\t\t= CONNECTIONPROPERTY('net_transport')\n\t, protocol_type\t\t\t= CONNECTIONPROPERTY('protocol_type')\n\t, local_net_address\t\t= CONNECTIONPROPERTY('local_net_address')\n\t, local_tcp_port\t\t= CONNECTIONPROPERTY('local_tcp_port')\n\t, client_net_address\t= CONNECTIONPROPERTY('client_net_address')\n\t, ServerName\t\t\t= @@SERVERNAME\n\t, ServiceName\t\t\t= @@SERVICENAME\n\t, ProductEdition\t\t= SERVERPROPERTY('edition')\n\t, ProductLevel\t\t\t= SERVERPROPERTY('ProductLevel')\n\t, ProductVersion\t\t= SERVERPROPERTY('ProductVersion')\n--\t, [Version]\t\t\t\t= @@VERSION",
+  "placeholders": []
+}

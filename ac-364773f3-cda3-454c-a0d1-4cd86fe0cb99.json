@@ -1,0 +1,17 @@
+{
+  "id": "364773f3-cda3-454c-a0d1-4cd86fe0cb99",
+  "name": "ac",
+  "prefix": "ac",
+  "description": "Add column",
+  "body": "IF (COL_LENGTH('dbo.$table_name$', '$column_name$') IS NULL)\nBEGIN;\n\tALTER TABLE dbo.$table_name$\n\t\tADD $column_name$ $SELECTIONEND$int$SELECTIONSTART$ NULL;\n\t\t--\tCONSTRAINT DF_$table_name$_$column_name$ DEFAULT (1)\n\t\t--\tCONSTRAINT UQ_$table_name$_$column_name$ UNIQUE\n\t\t--\tCONSTRAINT FK_$table_name$_$column_name$ FOREIGN KEY ($column_name$) REFERENCES [ReferencedTable] ([ReferencedColumn])\nEND;",
+  "placeholders": [
+    {
+      "name": "table_name",
+      "defaultValue": ""
+    },
+    {
+      "name": "column_name",
+      "defaultValue": ""
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "5465c9c8-b900-4742-93d7-317f6d81edab",
+  "name": "re",
+  "prefix": "re",
+  "description": "RaiseError",
+  "body": "RAISERROR('$CURSOR$',0,1) WITH NOWAIT;",
+  "placeholders": []
+}

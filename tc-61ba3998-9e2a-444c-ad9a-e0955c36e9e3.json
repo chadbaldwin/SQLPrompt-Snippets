@@ -1,0 +1,8 @@
+{
+  "id": "61ba3998-9e2a-444c-ad9a-e0955c36e9e3",
+  "name": "tc",
+  "prefix": "tc",
+  "description": "TRY ... CATCH fragment",
+  "body": "BEGIN TRY\n\tBEGIN TRAN;\n    \tRAISERROR('Error raised in TRY block.', 16, 1)\n\tCOMMIT;\nEND TRY\nBEGIN CATCH\n\tIF (@@TRANCOUNT > 0)\n\tBEGIN;\n\t\tRAISERROR('Rolling back',0,1) WITH NOWAIT;\n\t\tROLLBACK;\n\tEND;\n\n\tTHROW;\nEND CATCH;",
+  "placeholders": []
+}

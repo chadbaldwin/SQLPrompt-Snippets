@@ -1,0 +1,8 @@
+{
+  "id": "d4d5f1a1-4bb8-425c-99af-1fbbd73fc0d8",
+  "name": "rc0",
+  "prefix": "rc0",
+  "description": "If Rowcount Zero snippet",
+  "body": "IF (@@ROWCOUNT = 0)\nBEGIN;\n\tRAISERROR('No records to process',0,1) WITH NOWAIT;\n\tRETURN;\nEND;",
+  "placeholders": []
+}

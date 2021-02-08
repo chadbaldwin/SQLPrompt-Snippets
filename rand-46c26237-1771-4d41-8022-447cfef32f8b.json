@@ -1,0 +1,8 @@
+{
+  "id": "46c26237-1771-4d41-8022-447cfef32f8b",
+  "name": "rand",
+  "prefix": "rand",
+  "description": "Random Number Generate within Range",
+  "body": "DECLARE @a INT = 1, @b INT = 10\nSELECT FLOOR(RAND(CHECKSUM(NEWID()))*(@b-@a+1))+@a\n",
+  "placeholders": []
+}

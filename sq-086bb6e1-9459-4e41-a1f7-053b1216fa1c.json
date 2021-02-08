@@ -1,0 +1,8 @@
+{
+  "id": "086bb6e1-9459-4e41-a1f7-053b1216fa1c",
+  "name": "sq",
+  "prefix": "sq",
+  "description": "Subquery",
+  "body": "SELECT *\nFROM (\n\t$SELECTEDTEXT$\n) x",
+  "placeholders": []
+}

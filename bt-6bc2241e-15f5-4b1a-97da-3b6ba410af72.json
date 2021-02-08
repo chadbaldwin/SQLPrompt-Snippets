@@ -1,0 +1,8 @@
+{
+  "id": "6bc2241e-15f5-4b1a-97da-3b6ba410af72",
+  "name": "bt",
+  "prefix": "bt",
+  "description": "BEGIN TRAN...ROLLBACK block",
+  "body": "--SET XACT_ABORT ON;\nBEGIN TRAN;\n\t$SELECTEDTEXT$\nROLLBACK; --COMMIT",
+  "placeholders": []
+}

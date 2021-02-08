@@ -1,0 +1,8 @@
+{
+  "id": "32277300-3d37-4a06-af8c-1c292b02f61c",
+  "name": "b",
+  "prefix": "b",
+  "description": "Add brackets",
+  "body": "[$SELECTEDTEXT$]",
+  "placeholders": []
+}

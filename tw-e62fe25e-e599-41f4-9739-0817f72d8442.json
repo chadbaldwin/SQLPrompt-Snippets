@@ -1,0 +1,8 @@
+{
+  "id": "e62fe25e-e599-41f4-9739-0817f72d8442",
+  "name": "tw",
+  "prefix": "tw",
+  "description": "THROW function snippet",
+  "body": "; THROW 51000, '$CURSOR$', 1;",
+  "placeholders": []
+}

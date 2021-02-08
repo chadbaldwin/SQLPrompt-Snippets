@@ -1,0 +1,13 @@
+{
+  "id": "7e470409-b06d-48f0-bc39-79663d028e3b",
+  "name": "cfti",
+  "prefix": "cfti",
+  "description": "Create inline table-valued function",
+  "body": "USE $DBNAME$;\nGO\nIF OBJECT_ID('dbo.uf_$func_name$','IF') IS NOT NULL DROP FUNCTION dbo.uf_$func_name$;\nGO\n-- =============================================\n-- Description:\t\n-- =============================================\nCREATE FUNCTION dbo.uf_$func_name$ (\n\t@[VARIABLE_NAME] [TYPE]\n)\nRETURNS TABLE\nAS\nRETURN (\n\t--Query\n);\nGO\n",
+  "placeholders": [
+    {
+      "name": "func_name",
+      "defaultValue": ""
+    }
+  ]
+}

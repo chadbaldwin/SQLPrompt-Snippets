@@ -1,0 +1,17 @@
+{
+  "id": "5b4362c8-1d08-4b06-a8fa-cdfd77e9c739",
+  "name": "pct",
+  "prefix": "pct",
+  "description": "Percentage",
+  "body": "CONVERT(decimal(6,3), COALESCE($Numerator$ / NULLIF($Denominator$ * $SELECTIONSTART$/*1.00 OR 0.01*/$SELECTIONEND$, 0), 0.00))",
+  "placeholders": [
+    {
+      "name": "Numerator",
+      "defaultValue": ""
+    },
+    {
+      "name": "Denominator",
+      "defaultValue": ""
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "d233a575-98fe-45df-b4e6-714302177216",
+  "name": "crlf",
+  "prefix": "crlf",
+  "description": "crlf",
+  "body": "CHAR(13)+CHAR(10)",
+  "placeholders": []
+}

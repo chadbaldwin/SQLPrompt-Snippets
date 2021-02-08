@@ -1,0 +1,8 @@
+{
+  "id": "cf84808c-c8ce-413e-bb0c-aed55cf0477c",
+  "name": "p",
+  "prefix": "p",
+  "description": "Add parens",
+  "body": "($SELECTEDTEXT$)",
+  "placeholders": []
+}

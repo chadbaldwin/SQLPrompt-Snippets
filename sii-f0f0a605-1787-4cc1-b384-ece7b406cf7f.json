@@ -1,0 +1,13 @@
+{
+  "id": "f0f0a605-1787-4cc1-b384-ece7b406cf7f",
+  "name": "sii",
+  "prefix": "sii",
+  "description": "Set Identity Insert On",
+  "body": "SET IDENTITY_INSERT dbo.$TableName$ ON;\n$SELECTEDTEXT$\nSET IDENTITY_INSERT dbo.$TableName$ OFF;\n",
+  "placeholders": [
+    {
+      "name": "TableName",
+      "defaultValue": ""
+    }
+  ]
+}

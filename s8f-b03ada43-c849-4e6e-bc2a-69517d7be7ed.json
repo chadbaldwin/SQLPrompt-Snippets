@@ -1,0 +1,8 @@
+{
+  "id": "b03ada43-c849-4e6e-bc2a-69517d7be7ed",
+  "name": "s8f",
+  "prefix": "s8f",
+  "description": "SELECT * FROM",
+  "body": "SELECT *\nFROM ",
+  "placeholders": []
+}

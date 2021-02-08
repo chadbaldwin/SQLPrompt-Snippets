@@ -1,0 +1,13 @@
+{
+  "id": "ce9d2fed-020e-4b84-a048-a927b4a9003b",
+  "name": "cv",
+  "prefix": "cv",
+  "description": "Create view",
+  "body": "USE $DBNAME$;\nGO\nIF OBJECT_ID('dbo.vw_$view_name$','V') IS NOT NULL DROP VIEW dbo.vw_$view_name$;\nGO\n-- =============================================\n-- Description:\n-- =============================================\nCREATE VIEW dbo.vw_$view_name$\nAS\n\t$SELECTEDTEXT$$CURSOR$\nGO",
+  "placeholders": [
+    {
+      "name": "view_name",
+      "defaultValue": ""
+    }
+  ]
+}

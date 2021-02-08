@@ -1,0 +1,8 @@
+{
+  "id": "8aa64cbc-0827-4d60-bddf-2ad6ad50ea74",
+  "name": "casesensitive",
+  "prefix": "casesensitive",
+  "description": "Format text with case sensitive collation",
+  "body": "COLLATE SQL_Latin1_General_CP1_CS_AS",
+  "placeholders": []
+}

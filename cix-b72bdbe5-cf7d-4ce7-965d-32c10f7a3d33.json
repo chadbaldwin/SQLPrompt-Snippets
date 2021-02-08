@@ -1,0 +1,17 @@
+{
+  "id": "b72bdbe5-cf7d-4ce7-965d-32c10f7a3d33",
+  "name": "cix",
+  "prefix": "cix",
+  "description": "Create index",
+  "body": "IF (INDEXPROPERTY(OBJECT_ID('dbo.$table_name$'), 'IX_$table_name$_$column$', 'IndexId') IS NULL)\nBEGIN;\n\tCREATE UNIQUE    CLUSTERED INDEX IX_$table_name$_$column$ ON dbo.$table_name$ ($column$);\n\tCREATE UNIQUE NONCLUSTERED INDEX IX_$table_name$_$column$ ON dbo.$table_name$ ($column$) INCLUDE ();\n\tCREATE           CLUSTERED INDEX IX_$table_name$_$column$ ON dbo.$table_name$ ($column$);\n\tCREATE        NONCLUSTERED INDEX IX_$table_name$_$column$ ON dbo.$table_name$ ($column$) INCLUDE ();\nEND;",
+  "placeholders": [
+    {
+      "name": "table_name",
+      "defaultValue": ""
+    },
+    {
+      "name": "column",
+      "defaultValue": ""
+    }
+  ]
+}

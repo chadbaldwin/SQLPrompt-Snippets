@@ -1,0 +1,8 @@
+{
+  "id": "d39b028b-45cb-40d1-9131-a962e0320650",
+  "name": "siv",
+  "prefix": "siv",
+  "description": "Select In Values Query Sample",
+  "body": "SELECT x.Col1 FROM (VALUES ('Val1'), ('Val2')) x(Col1)\nSELECT x.Col1, x.Col2 FROM (VALUES ('Val1','Val2'), ('Val3','Val4')) x(Col1,Col2)",
+  "placeholders": []
+}

@@ -1,0 +1,8 @@
+{
+  "id": "1c5b360c-62d9-4394-b60d-136a32004d6b",
+  "name": "dife",
+  "prefix": "dife",
+  "description": "Drop If Function Exists",
+  "body": "IF OBJECT_ID('dbo.$PASTE$') IS NOT NULL DROP FUNCTION dbo.$PASTE$;",
+  "placeholders": []
+}

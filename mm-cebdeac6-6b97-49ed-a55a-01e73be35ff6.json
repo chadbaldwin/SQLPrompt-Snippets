@@ -1,0 +1,8 @@
+{
+  "id": "cebdeac6-6b97-49ed-a55a-01e73be35ff6",
+  "name": "mm",
+  "prefix": "mm",
+  "description": "MinMax Selection (Column)",
+  "body": "MIN($SELECTEDTEXT$), MAX($SELECTEDTEXT$)",
+  "placeholders": []
+}

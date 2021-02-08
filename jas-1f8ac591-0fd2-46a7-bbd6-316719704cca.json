@@ -1,0 +1,8 @@
+{
+  "id": "1f8ac591-0fd2-46a7-bbd6-316719704cca",
+  "name": "jas",
+  "prefix": "jas",
+  "description": "Job Add Step",
+  "body": "--1 = Quit with success\n--2 = Quit with failure\n--3 = Go to next step\n--4 = Go to step on_success_step_id\n\n-- Add new job step\nEXEC msdb.dbo.sp_add_jobstep\n\t@job_name\t\t\t= N'[JOB NAME]',\n\t@step_name\t\t\t= N'[NEW STEP NAME]',  \n\t@command\t\t\t= N'[NEW STEP CODE]',   \n\t@database_name\t\t= N'[NEW STEP DATABASE]'\n\n-- Update actions on previous last step\nEXEC msdb.dbo.sp_update_jobstep\n\t@job_name\t\t\t= N'[JOB NAME]',\n\t@step_id\t\t\t= [LAST STEP ID],\n\t@on_success_action\t= 3,\n\t@on_fail_action\t\t= 3",
+  "placeholders": []
+}
