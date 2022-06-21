@@ -1,0 +1,6 @@
+{
+  "id": "709b3b35-3d3d-4893-91f5-7d7ef6d55724",
+  "prefix": "nvc",
+  "description": "nvarchar()",
+  "body": "nvarchar($CURSOR$)"
+}
