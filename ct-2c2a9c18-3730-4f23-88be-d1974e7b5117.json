@@ -1,9 +1,8 @@
 {
   "id": "2c2a9c18-3730-4f23-88be-d1974e7b5117",
-  "name": "ct",
   "prefix": "ct",
   "description": "Create table",
-  "body": "IF OBJECT_ID('dbo.$table_name$','U') IS NULL\nBEGIN;\n\tCREATE TABLE dbo.$table_name$ (\n\t\t$table_name$ID int IDENTITY(1,1) NOT NULL CONSTRAINT PK_$table_name$ PRIMARY KEY CLUSTERED ($table_name$ID ASC),\n\t--\tID int IDENTITY(1,1) NOT NULL CONSTRAINT PK_$table_name$ PRIMARY KEY CLUSTERED (ID ASC),\n\t--\tInsertDateUTC datetime NOT NULL CONSTRAINT DF_$table_name$_InsertDateUTC DEFAULT GETUTCDATE(),\n\t\t$CURSOR$\n\t--\tCONSTRAINT FK_$table_name$_[ForeignKeyColumn] FOREIGN KEY([ForeignKeyColumn]) REFERENCES [ReferencedTable] ([ReferencedColumn]),\n\t);\nEND;",
+  "body": "IF OBJECT_ID('dbo.$table_name$','U') IS NULL\nBEGIN;\n\tCREATE TABLE dbo.$table_name$ (\n\t\t$table_name$ID int\tNOT NULL IDENTITY(1,1) CONSTRAINT PK_$table_name$ PRIMARY KEY CLUSTERED,\n\t--\tID int NOT NULL IDENTITY(1,1) CONSTRAINT PK_$table_name$ PRIMARY KEY CLUSTERED (ID ASC),\n\t--\tInsertDateUTC datetime NOT NULL CONSTRAINT DF_$table_name$_InsertDateUTC DEFAULT GETUTCDATE(),\n\t\t$CURSOR$\n\t--\tCONSTRAINT FK_$table_name$_[ForeignKeyColumn] FOREIGN KEY([ForeignKeyColumn]) REFERENCES [ReferencedTable] ([ReferencedColumn]),\n\t);\nEND;",
   "placeholders": [
     {
       "name": "table_name",
