@@ -1,0 +1,8 @@
+{
+  "id": "b2ce9525-c2e6-4f13-bc1e-86abe741cc62",
+  "name": "qQueryPlans",
+  "prefix": "qQueryPlans",
+  "description": "Search Query Plans",
+  "body": "DECLARE @Search nvarchar(100) = '$CURSOR$'\nSELECT p.plan_handle, st.[text], p.bucketid, p.refcounts, p.usecounts, p.size_in_bytes, p.cacheobjtype, p.objtype, db.[name] --#filterme\nFROM sys.dm_exec_cached_plans p\n      CROSS APPLY sys.dm_exec_sql_text(p.plan_handle) st\n\t  JOIN sys.databases db ON db.database_id = st.[dbid]\nWHERE p.objtype NOT IN ('Proc', 'Trigger', 'Prepared', 'View')\n\tAND st.[text] NOT LIKE 'UPDATE msdb.dbo.sysjobschedules SET next_run_date = %'\n\tAND st.[text] NOT LIKE '%--#filterme%'\n\tAND st.[text] NOT LIKE '%#tb1_sysprocesses%'\n\tAND st.[text] LIKE N'%'+@Search+'%';",
+  "placeholders": []
+}

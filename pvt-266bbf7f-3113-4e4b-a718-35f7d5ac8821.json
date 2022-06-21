@@ -1,0 +1,8 @@
+{
+  "id": "266bbf7f-3113-4e4b-a718-35f7d5ac8821",
+  "name": "pvt",
+  "prefix": "pvt",
+  "description": "Pivot Query Template",
+  "body": "SELECT <non-pivoted column>,\n    [first pivoted column] AS <column name>,\n    [second pivoted column] AS <column name>,\n    ...\n    [last pivoted column] AS <column name>\nFROM\n    (<SELECT query that produces the data>)\n    AS <alias for the source query>\nPIVOT\n(\n    <aggregation function>(<column being aggregated>)\nFOR\n[<column that contains the values that will become column headers>]\n    IN ( [first pivoted column], [second pivoted column], ... [last pivoted column])\n) AS <alias for the pivot table>",
+  "placeholders": []
+}

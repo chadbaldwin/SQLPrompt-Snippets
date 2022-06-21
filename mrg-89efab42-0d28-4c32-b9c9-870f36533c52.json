@@ -1,0 +1,8 @@
+{
+  "id": "89efab42-0d28-4c32-b9c9-870f36533c52",
+  "name": "mrg",
+  "prefix": "mrg",
+  "description": "Merge Statement Template",
+  "body": "MERGE INTO [TargetTable] o\n--USING ([Query]) AS n\n--OR\n--USING (VALUES ([Value][,...])[,()]) n([ColumnNames][,...])\nON o.[Column] = n.[Column] --AND o.[Column] = n.[Column]\nWHEN MATCHED [...Other matching logic] --AND o.[Column] <> n.[Column] --Exists in SOURCE and TARGET\nTHEN\n\tUPDATE SET [Column] = n.[Column]\nWHEN NOT MATCHED BY TARGET --Exists in SOURCE but not in TARGET\nTHEN\n\tINSERT () VALUES ()\n--WHEN NOT MATCHED BY SOURCE --Exists in TARGET but not in SOURCE\n--THEN\n--\tDELETE\nOUTPUT $action, 'Inserted', Inserted.*, 'Deleted', Deleted.*;",
+  "placeholders": []
+}

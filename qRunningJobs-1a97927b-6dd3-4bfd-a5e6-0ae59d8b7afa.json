@@ -1,0 +1,8 @@
+{
+  "id": "1a97927b-6dd3-4bfd-a5e6-0ae59d8b7afa",
+  "name": "qRunningJobs",
+  "prefix": "qRunningJobs",
+  "description": "Query Current Running Jobs",
+  "body": "SELECT job_id\t\t\t\t\t= ja.job_id\n\t, job_name\t\t\t\t\t= j.name\n\t, start_execution_date\t\t= ja.start_execution_date\n\t, current_executed_step_id\t= ISNULL(ja.last_executed_step_id, 0) + 1\n\t, step_name\t\t\t\t\t= js.step_name\nFROM msdb.dbo.sysjobactivity ja\n\tLEFT JOIN msdb.dbo.sysjobhistory jh ON ja.job_history_id = jh.instance_id\n\tJOIN msdb.dbo.sysjobs j ON ja.job_id = j.job_id\n\tJOIN msdb.dbo.sysjobsteps js ON ja.job_id = js.job_id AND ISNULL(ja.last_executed_step_id, 0) + 1 = js.step_id\nWHERE ja.session_id = (SELECT TOP 1 session_id FROM msdb.dbo.syssessions ORDER BY agent_start_date DESC)\n\tAND ja.start_execution_date IS NOT NULL\n\tAND ja.stop_execution_date IS NULL",
+  "placeholders": []
+}

@@ -1,0 +1,13 @@
+{
+  "id": "10bea6fd-74bb-4e90-8c29-20d388a84771",
+  "name": "qTempTableSchema",
+  "prefix": "qTempTableSchema",
+  "description": "Temp Table Schema Query",
+  "body": "SELECT c.name, t.name, c.max_length, c.[precision], c.scale, c.is_nullable FROM tempdb.sys.columns c JOIN tempdb.sys.types t ON c.system_type_id = t.system_type_id WHERE [object_id] = OBJECT_ID('tempdb..#$TempTableName$') AND t.name <> 'sysname' ORDER BY column_id",
+  "placeholders": [
+    {
+      "name": "TempTableName",
+      "defaultValue": ""
+    }
+  ]
+}
